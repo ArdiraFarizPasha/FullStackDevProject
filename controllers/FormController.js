@@ -3,7 +3,6 @@ const { Symptom } = require('../models')
 class FormController {
 
     static addForm (req, res) {
-        {console.log(req.body, "<< params")}
         const { 
             fever,
             breathingDifficulty,
@@ -15,7 +14,7 @@ class FormController {
             vomitDiarrhea
         } = req.body
         Symptom.create({
-            // UserId: 
+            userId: 
             fever,
             breathingDifficulty,
             cough,
