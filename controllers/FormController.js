@@ -4,6 +4,7 @@ class FormController {
 
     static addForm (req, res) {
         const { 
+            userId,
             fever,
             breathingDifficulty,
             cough,
@@ -13,8 +14,9 @@ class FormController {
             bodyAches,
             vomitDiarrhea
         } = req.body
+        {console.log(req.body, "body")}
         Symptom.create({
-            userId: 
+            UserId: userId,
             fever,
             breathingDifficulty,
             cough,
