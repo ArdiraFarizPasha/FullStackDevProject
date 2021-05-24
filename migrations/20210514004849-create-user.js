@@ -26,9 +26,6 @@ module.exports = {
       visitedHospital: {
         type: Sequelize.STRING
       },
-      testResult: {
-        type: Sequelize.BOOLEAN
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

@@ -11,10 +11,13 @@ class FormController {
             losingSenseTaste,
             losingSenseSmell,
             bodyAches,
-            vomitDiarrhea
+            vomitDiarrhea,
+            testResult
         } = req.body
+        req.body.symptom
         Symptom.create({
-            userId: 
+            userId,
+            testResult,
             fever,
             breathingDifficulty,
             cough,

@@ -3,13 +3,13 @@ const { User } = require('../models')
 class UserController {
 
     static personal(req, res) {
+        console.log(req, "<< req");
         const { 
             fullName,
             gender,
             dateOfBirth,
             email,
             phoneNumber,
-            testResult,
             visitedHospital
         } = req.body
         User.create({
@@ -18,7 +18,6 @@ class UserController {
             dateOfBirth,
             email,
             phoneNumber,
-            testResult,
             visitedHospital
         })
             .then(user => {
