@@ -2,10 +2,10 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-     await queryInterface.addColumn('Symptoms', 'userId' ,Sequelize.INTEGER);
+     await queryInterface.addColumn('Symptoms', 'UserId' ,Sequelize.INTEGER);
   },
 
   down: async (queryInterface, Sequelize) => {
-     await queryInterface.addColumn('Symptoms', 'userId' ,{});
+     await queryInterface.removeColumn('Symptoms', 'UserId' ,{});
   }
 };

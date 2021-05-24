@@ -5,7 +5,6 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
-      // define association here
       User.hasOne(models.Symptom)
     }
   };
@@ -16,7 +15,8 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING,
     phoneNumber: DataTypes.STRING,
     visitedHospital: DataTypes.STRING,
-    testResult: DataTypes.BOOLEAN
+    createdAt: DataTypes.DATE,
+    updatedAt: DataTypes.DATE
   }, {
     sequelize,
     modelName: 'User',

@@ -3,13 +3,13 @@ const { User } = require('../models')
 class UserController {
 
     static personal(req, res) {
+        console.log(req, "<< req");
         const { 
             fullName,
             gender,
             dateOfBirth,
             email,
             phoneNumber,
-            testResult,
             visitedHospital
         } = req.body
         User.create({
@@ -18,11 +18,12 @@ class UserController {
             dateOfBirth,
             email,
             phoneNumber,
-            testResult,
             visitedHospital
         })
             .then(user => {
-                res.status(200).json({user})
+                res.status(200).json({
+                    id: user.id
+                })
             })
             .catch(err => {
                 res.status(500).json({

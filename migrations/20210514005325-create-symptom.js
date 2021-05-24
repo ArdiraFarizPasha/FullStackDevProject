@@ -10,35 +10,35 @@ module.exports = {
       },
       fever: {
         allowNull: false,
-        type: Sequelize.BOOLEAN
+        type: Sequelize.STRING
       },
       breathingDifficulty: {
         allowNull: false,
-        type: Sequelize.BOOLEAN
+        type: Sequelize.STRING
       },
       cough: {
         allowNull: false,
-        type: Sequelize.BOOLEAN
+        type: Sequelize.STRING
       },
       runnyNose: {
         allowNull: false,
-        type: Sequelize.BOOLEAN
+        type: Sequelize.STRING
       },
       losingSenseSmell: {
         allowNull: false,
-        type: Sequelize.BOOLEAN
+        type: Sequelize.STRING
       },
       losingSenseTaste: {
         allowNull: false,
-        type: Sequelize.BOOLEAN
+        type: Sequelize.STRING
       },
       bodyAches: {
         allowNull: false,
-        type: Sequelize.BOOLEAN
+        type: Sequelize.STRING
       },
       vomitDiarrhea: {
         allowNull: false,
-        type: Sequelize.BOOLEAN
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -47,7 +47,10 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
-      }
+      },
+      testResult: {
+        type: Sequelize.STRING
+      },
     });
   },
   down: (queryInterface, Sequelize) => {

@@ -3,8 +3,9 @@ const { Symptom } = require('../models')
 class FormController {
 
     static addForm (req, res) {
-        const { 
-            userId,
+        console.log(req.body, "<< req");
+        const {
+            userId, 
             fever,
             breathingDifficulty,
             cough,
@@ -12,11 +13,12 @@ class FormController {
             losingSenseTaste,
             losingSenseSmell,
             bodyAches,
-            vomitDiarrhea
+            vomitDiarrhea,
+            testResult
         } = req.body
         {console.log(req.body, "body")}
         Symptom.create({
-            UserId: userId,
+            UserId: userId, 
             fever,
             breathingDifficulty,
             cough,
@@ -24,10 +26,12 @@ class FormController {
             losingSenseTaste,
             losingSenseSmell,
             bodyAches,
-            vomitDiarrhea
+            vomitDiarrhea,
+            testResult
         })
             .then(symptom => {
-                res.status(200).json(symptom)
+                // console.log({symptom}, "<< symptom");
+                res.status(200).json({symptom})
             })
             .catch(err => {
                 res.status(500).json({
