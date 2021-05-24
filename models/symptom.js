@@ -5,7 +5,9 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Symptom extends Model {
     static associate(models) {
-      Symptom.belongsTo(models.User)
+      Symptom.belongsTo(models.User, {
+        foreignKey: 'UserId'
+      })
     }
   };
   Symptom.init({
@@ -17,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     losingSenseTaste: DataTypes.STRING,
     bodyAches: DataTypes.STRING,
     vomitDiarrhea: DataTypes.STRING,
-    userId: DataTypes.INTEGER,
+    UserId: DataTypes.INTEGER,
     testResult: DataTypes.STRING,
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE

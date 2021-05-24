@@ -21,7 +21,9 @@ class UserController {
             visitedHospital
         })
             .then(user => {
-                res.status(200).json({user})
+                res.status(200).json({
+                    id: user.id
+                })
             })
             .catch(err => {
                 res.status(500).json({
