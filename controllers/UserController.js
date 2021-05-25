@@ -3,7 +3,6 @@ const { User } = require('../models')
 class UserController {
 
     static personal(req, res) {
-        console.log(req, "<< req");
         const { 
             fullName,
             gender,
@@ -27,19 +26,36 @@ class UserController {
             })
             .catch(err => {
                 res.status(500).json({
-                    name: "error"
+                    name: err
                 })
             })
     }
 
     static getData (req,res) {
-        User.findAll()
+        User.findAll({
+            include: 'Symptom'
+        })
         .then(data => {
             res.status(200).json({data})
         })
         .catch(err => {
             res.status(500).json({
-                name: "error"
+                name: err
+            })
+        })
+    }
+
+    static getDataById (req,res) {
+        let id = +req.params.id
+        User.findByPk(id,{
+            include: 'Symptom'
+        })
+        .then(data => {
+            res.status(200).json({data})
+        })
+        .catch(err => {
+            res.status(500).json({
+                name: err
             })
         })
     }

@@ -13,8 +13,6 @@ app.use(express.json())
 
 app.use(cors())
 
-// app.use(indexRoutes)
-
 app.use(userRoutes)
 
 app.listen(PORT, (req, res) => {
